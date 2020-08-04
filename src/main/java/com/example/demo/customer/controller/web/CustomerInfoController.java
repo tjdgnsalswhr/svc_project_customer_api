@@ -45,7 +45,7 @@ public class CustomerInfoController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
-	@ApiOperation(value = "회 정보 수정", httpMethod="PUT", notes="회원 정보 수정 API.")
+	@ApiOperation(value = "회원 정보 수정", httpMethod="PUT", notes="회원 정보 수정 API.")
 	@PutMapping(value="/customer/info")
 	public ResponseEntity<Object> updateCustomer(@RequestBody CustomerRequestDTO customerRequestDTO)
 	{
