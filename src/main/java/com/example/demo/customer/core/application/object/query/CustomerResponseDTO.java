@@ -20,6 +20,4 @@ public class CustomerResponseDTO {
 	String cpassword; 	//회원 비밀번호
 	String cname; 	//회원 이름
 	String code; //1이면 팀 2면 가게
-	int balance; 	//잔액
-
 }

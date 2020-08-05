@@ -28,16 +28,14 @@ public class Customer {
 	String cpassword; 	//회원 비밀번호
 	String cname; 		//가게 or 팀 이름
 	String code; 		//접근 권한, 1이면 팀, 2면 가게
-	int balance;			//잔액
 	
 	@Builder
-	public Customer(String cid, String cpassword, String cname, String code, int balance)
+	public Customer(String cid, String cpassword, String cname, String code)
 	{
 		this.cid = cid;
 		this.cpassword = cpassword;
 		this.cname = cname;
 		this.code = code;
-		this.balance = balance;
 	}
 	
 	public void update(CustomerRequestDTO customerRequestDTO)
@@ -46,7 +44,6 @@ public class Customer {
 		this.cpassword = customerRequestDTO.getCpassword();
 		this.cname = customerRequestDTO.getCname();
 		this.code = customerRequestDTO.getCode();
-		this.balance = customerRequestDTO.getBalance();
 		
 	}
 

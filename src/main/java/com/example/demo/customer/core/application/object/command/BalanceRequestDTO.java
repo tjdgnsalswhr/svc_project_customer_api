@@ -1,5 +1,7 @@
 package com.example.demo.customer.core.application.object.command;
 
+import javax.persistence.Id;
+
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,18 +14,11 @@ import lombok.extern.slf4j.Slf4j;
 @NoArgsConstructor
 @Getter
 @Setter
-public class CustomerRequestDTO {
-	
+public class BalanceRequestDTO {
 	@ApiModelProperty(example = "teamid01")
-	String cid; 			//회원 아이디
-	
-	@ApiModelProperty(example = "teampassword01")
-	String cpassword; 	//회원 비밀번호
-	
-	@ApiModelProperty(example = "Digital Poc")
-	String cname; 	//회원 이름
-	
-	@ApiModelProperty(example = "1")
-	String code; //1이면 팀 2면 가게
-
+	String cid; 		//회원 아이디
+	@ApiModelProperty(example = "store01")
+	String sid; 		//가게 아이디
+	@ApiModelProperty(example = "500000")
+	int bmoney;			//해당 잔액
 }
