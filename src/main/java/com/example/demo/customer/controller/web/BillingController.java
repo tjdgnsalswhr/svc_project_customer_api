@@ -10,29 +10,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.customer.core.application.object.command.CustomerRequestDTO;
-import com.example.demo.customer.core.service.CustomerBillingService;
+import com.example.demo.customer.core.service.BillingService;
 
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-public class CustomerBillingController {
+public class BillingController {
 	
 	@Autowired
-	CustomerBillingService customerBillingService;
+	BillingService billingService;
 	
 	@ApiOperation(value = "회원 금액 충전", httpMethod="PUT", notes="회원 금액 충전 API.")
-	@PutMapping(value="/customer/info/charge/{cid}/{money}")
-	public ResponseEntity<Object> chargeCustomerBalance(@PathVariable String cid, @PathVariable int money)
+	@PutMapping(value="/billing/charge/{cid}/{sid}/{money}")
+	public ResponseEntity<Object> chargeBalance(@PathVariable String cid, @PathVariable String sid, @PathVariable int money)
 	{
-		customerBillingService.chargeMoney(cid, money);
+		billingService.chargeMoney(cid, sid, money);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
 	@ApiOperation(value = "회원 금액 결제", httpMethod="PUT", notes="회원 금액 결제 API.")
-	@PutMapping(value="/customer/info/use/{cid}/{money}")
-	public ResponseEntity<Object> useCustomerBalance(@PathVariable String cid, @PathVariable int money)
+	@PutMapping(value="/billing/use/{cid}/{sid}/{money}")
+	public ResponseEntity<Object> useBalance(@PathVariable String cid, @PathVariable String sid, @PathVariable int money)
 	{
-		customerBillingService.useMoney(cid, money);
+		billingService.useMoney(cid, sid, money);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 }

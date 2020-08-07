@@ -3,6 +3,7 @@ package com.example.demo.customer.controller.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import com.example.demo.customer.core.service.AuthCustomerService;
 
 import io.swagger.annotations.ApiOperation;
 
+@CrossOrigin("*")
 @RestController
 public class AuthCustomerController {
 	@Autowired //자동주입

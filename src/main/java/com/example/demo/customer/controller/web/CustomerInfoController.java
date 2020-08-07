@@ -1,8 +1,10 @@
 package com.example.demo.customer.controller.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,11 +14,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.customer.core.application.object.command.CustomerRequestDTO;
-import com.example.demo.customer.core.application.object.query.ResponseDTO;
+import com.example.demo.customer.core.application.object.query.CustomerResponseDTO;
 import com.example.demo.customer.core.service.CustomerInfoService;
 
 import io.swagger.annotations.ApiOperation;
 
+@CrossOrigin("*")
 @RestController
 public class CustomerInfoController {
 	
@@ -32,7 +35,7 @@ public class CustomerInfoController {
 	
 	@ApiOperation(value = "회원 정보 조회", httpMethod="GET", notes="회원 정보 조회 API.")
 	@GetMapping(value="/customer/info/{cid}")
-	public ResponseEntity<Object> getOneCustomer(@PathVariable String cid)
+	public ResponseEntity<CustomerResponseDTO> getOneCustomer(@PathVariable String cid)
 	{
 		return new ResponseEntity<>(customerInfoService.getOneCustomer(cid), HttpStatus.OK);
 	}
