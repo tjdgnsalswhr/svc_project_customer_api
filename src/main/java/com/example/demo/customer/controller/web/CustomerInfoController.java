@@ -17,6 +17,7 @@ import com.example.demo.customer.core.application.object.command.CustomerRequest
 import com.example.demo.customer.core.application.object.query.CustomerResponseDTO;
 import com.example.demo.customer.core.service.CustomerInfoService;
 
+import antlr.collections.List;
 import io.swagger.annotations.ApiOperation;
 
 @CrossOrigin("*")
@@ -28,7 +29,7 @@ public class CustomerInfoController {
 	
 	@ApiOperation(value="전체 회원 정보 조회", httpMethod = "GET", notes="전체 회원 정보 조회 API.")
 	@GetMapping(value="/customer/info/all")
-	public ResponseEntity<Object> getAllStore()
+	public ResponseEntity<Object> getAllCustomer()
 	{
 		return new ResponseEntity<>(customerInfoService.getAllCustomer(),HttpStatus.OK);
 	}
