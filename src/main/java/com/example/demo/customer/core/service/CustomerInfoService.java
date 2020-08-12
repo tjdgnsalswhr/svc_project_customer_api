@@ -42,6 +42,17 @@ public class CustomerInfoService {
 			return null;
 	}
 	
+	public CustomerResponseDTO getOneCustomerByName(String cname) //계속 주고 받는 것에 DTO를 쓰는 이유는 원래 객체를 망가뜨리지 않기 위해서 비슷한 것을 복제해 사용하는 것임
+	{
+		Optional<Customer> optionalCustomer = customerRepository.findByCname(cname);
+		if(optionalCustomer.isPresent())
+		{
+			return modelMapper.map(optionalCustomer.get(), CustomerResponseDTO.class);
+		}
+		else
+			return null;
+	}
+	
 	public void insertCustomer(CustomerRequestDTO customerRequestDTO)
 	{
 		Customer customer = modelMapper.map(customerRequestDTO, Customer.class);

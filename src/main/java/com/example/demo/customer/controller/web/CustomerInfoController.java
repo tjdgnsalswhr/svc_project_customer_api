@@ -42,6 +42,13 @@ public class CustomerInfoController {
 		return new ResponseEntity<>(customerInfoService.getOneCustomer(cid), HttpStatus.OK);
 	}
 	
+	@ApiOperation(value = "회원 아이디로 정보 조회", httpMethod="GET", notes="회원 아이디로 정보 조회 API.")
+	@GetMapping(value="/customer/info/Byname/{cname}")
+	public ResponseEntity<CustomerResponseDTO> getOneCustomerByName(@PathVariable String cname)
+	{
+		return new ResponseEntity<>(customerInfoService.getOneCustomerByName(cname), HttpStatus.OK);
+	}
+	
 	@ApiOperation(value = "회원 정보 추가", httpMethod="POST", notes="회원 정보 추가 API")
 	@PostMapping(value="/customer/info")
 	public ResponseEntity<Object> addCustomer(@RequestBody CustomerRequestDTO customerRequestDTO)
