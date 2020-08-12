@@ -1,7 +1,15 @@
 insert into customers (cid, cpassword, cname, code) values
-('teamid01', 'teampw01', 'team01', '1'),
-('teamid02', 'teampw02', 'team02', '1'),
-('teamid03', 'teampw03', 'team03', '1'),
-('ownerid01', 'ownerpw01', 'store01', '2'),
-('ownerid02', 'ownerpw02', 'store02', '2'),
-('ownerid03', 'ownerpw03', 'store03', '2');
+('teamid01', 'teampw01', 'Digital Poc', '1'),
+('teamid02', 'teampw02', 'Data Biz', '1'),
+('teamid03', 'teampw03', 'ICT 혁신', '1'),
+('teamid04', 'teampw04', 'Digital Billing', '1'),
+('ownerid01', 'ownerpw01', '슈퍼 타이', '2'),
+('ownerid02', 'ownerpw02', '모박사 부대찌개', '2'),
+('ownerid03', 'ownerpw03', '꿀돼지 두루치기', '2'),
+('ownerid04', 'ownerpw04', '천지연', '2'),
+('ownerid05', 'ownerpw05', '스타벅스', '2'),
+('ownerid06', 'ownerpw06', '칭따오', '2'),
+('ownerid07', 'ownerpw07', '최고야 전국 5대 짬뽕', '2'),
+('ownerid08', 'ownerpw08', '하코야', '2'),
+('ownerid09', 'ownerpw09', '스시가오', '2'),
+('ownerid10', 'ownerpw10', '킨파', '2');

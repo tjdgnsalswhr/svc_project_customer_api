@@ -25,8 +25,8 @@ public class BalanceInfoController {
 	@Autowired
 	BalanceInfoService balanceInfoService;
 	
-	@ApiOperation(value="전체 잔액 정보 조회", httpMethod = "GET", notes="전체 잔액 정보 조회 API.")
-	@GetMapping(value="/balance/info/all")
+	@ApiOperation(value="전체 잔액 정보 조회", httpMethod = "GET", notes="전체 잔액 정보 조회 API." )
+	@GetMapping(value="/balance/info/all", produces="application/json;charset=UTF-8")
 	public ResponseEntity<Object> getAllBalance()
 	{
 		return new ResponseEntity<>(balanceInfoService.getAllBalance(),HttpStatus.OK);
