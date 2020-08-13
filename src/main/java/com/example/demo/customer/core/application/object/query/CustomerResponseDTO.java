@@ -1,7 +1,6 @@
 package com.example.demo.customer.core.application.object.query;
 
 import com.example.demo.customer.core.application.object.command.CustomerRequestDTO;
-
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
